@@ -31,8 +31,8 @@ public class Check {
 
         result1 = "correct:";
         result2 = "wrong:";
-        sb1.append("ги");
-        sb2.append("ги");
+        sb1.append("(");
+        sb2.append("(");
         String str = null, str1 = null;
         String[] strings = null, strings1 = null;
         while ((str = br1.readLine()) != null && (str1 = br2.readLine()) != null) {
@@ -46,6 +46,10 @@ public class Check {
                 sb2.append(strings1[0] + ",");
             }
         }
+        if(rightCount != 0)
+            sb1.deleteCharAt(sb1.length() - 1);
+        if(wrongCount != 0)
+            sb2.deleteCharAt(sb2.length() - 1);
         sb1.append(")");
         sb2.append(")");
         result1 += rightCount + sb1.toString();
